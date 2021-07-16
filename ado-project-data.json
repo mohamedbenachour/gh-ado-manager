@@ -1,6 +1,6 @@
 {
-  "name": "project1233",
-  "description": "project1233",
+  "name": "ProjectName",
+  "description": "ProjectName",
   "capabilities": {
     "versioncontrol": {
       "sourceControlType": "Git"
