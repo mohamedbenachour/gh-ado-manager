@@ -22,7 +22,7 @@ parameters:
   default: AdoOrgName
 
 variables:
-- group: my-variable-group
+- group: gh-ado-group-variable
 
 trigger: none
 
