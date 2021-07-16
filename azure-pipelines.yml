@@ -3,16 +3,32 @@
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
 
+parameters:
+- name: gh_repo
+  displayName: Github Repo Name
+  type: string
+  default: projectname-reponame
+- name: ado_project
+  displayName: ADO Project Name
+  type: string
+  default: ProjectName
+- name: gh_org
+  displayName: Github Org Name Name
+  type: string
+  default: GhOrgName
+- name: ado_org
+  displayName: ADO Org Name Name
+  type: string
+  default: AdoOrgName
+
+variables:
+- group: my-variable-group
+
 trigger: none
 
 pool:
   vmImage: ubuntu-latest
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
-
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+- script: bash github.sh $(gh_user) $(gh_pat) $(gh_org) $(gh_repo)
+  displayName: 'create github repo'
